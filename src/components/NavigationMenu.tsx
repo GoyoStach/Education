@@ -1,5 +1,15 @@
 import * as NavigationMenuPrimitive from '@radix-ui/react-navigation-menu'
 
+import {
+  BackpackIcon,
+  ExternalLinkIcon,
+  GitHubLogoIcon,
+  KeyboardIcon,
+  LaptopIcon,
+  PlusCircledIcon,
+  PlusIcon,
+} from '@radix-ui/react-icons'
+
 import React from 'react'
 import { clsx } from 'clsx'
 
@@ -16,13 +26,14 @@ const NavigationMenu = () => {
         <NavigationMenuPrimitive.Item>
           <NavigationMenuPrimitive.Trigger
             className={clsx(
-              'rounded-md px-3 py-2 text-sm hover:bg-rosePineDawn-overlay dark:hover:bg-rosePineMoon-overlay',
+              'flex items-center rounded-md px-3 py-2 text-sm hover:bg-rosePineDawn-overlay dark:hover:bg-rosePineMoon-overlay',
               'text-sm font-medium',
               'text-rosePineDawn-text dark:text-rosePineMoon-text',
               'focus:outline-none focus-visible:ring focus-visible:ring-opacity-75',
             )}
           >
-            Overview
+            <LaptopIcon className="h-8 w-8 object-cover pr-1" />
+            Main Projects
           </NavigationMenuPrimitive.Trigger>
 
           <NavigationMenuPrimitive.Content
@@ -35,14 +46,47 @@ const NavigationMenu = () => {
             )}
           >
             <div className="w-[21rem] bg-rosePineDawn-surface p-3 dark:bg-rosePineMoon-surface lg:w-[23rem]">
-              <div className="grid grid-cols-6 gap-4">
-                <div className="col-span-2 w-full rounded-md bg-rosePineDawn-overlay p-4 dark:bg-rosePineMoon-overlay"></div>
-
-                <div className="col-span-4 flex w-full flex-col space-y-3 rounded-md bg-rosePineDawn-base p-4 dark:bg-rosePineMoon-base">
-                  <div className="h-12 w-full rounded-md bg-rosePineDawn-overlay dark:bg-rosePineMoon-overlay"></div>
-                  <div className="h-12 w-full rounded-md bg-rosePineDawn-overlay dark:bg-rosePineMoon-overlay"></div>
-                  <div className="h-12 w-full rounded-md bg-rosePineDawn-overlay dark:bg-rosePineMoon-overlay"></div>
-                  <div className="h-12 w-full rounded-md bg-rosePineDawn-overlay dark:bg-rosePineMoon-overlay"></div>
+              <div className="flex w-full flex-col space-y-3 rounded-md bg-rosePineDawn-base p-4 dark:bg-rosePineMoon-base">
+                <div className="grid w-full grid-cols-6 justify-start rounded-md bg-rosePineDawn-overlay p-1 dark:bg-rosePineMoon-overlay">
+                  <div className="col-span-2 flex items-center justify-center rounded-md">
+                    <img
+                      className="h-[100%] w-[100%] object-cover p-2"
+                      src="/astro.svg"
+                      alt="astro"
+                    />
+                  </div>
+                  <div className="col-span-4 flex flex-col justify-center gap-y-1">
+                    <span className="text-sm font-medium text-rosePineDawn-text dark:text-rosePineMoon-text">
+                      Obsidian to Astro
+                    </span>
+                    <div className="text-justify text-sm text-rosePineDawn-muted dark:text-rosePineMoon-subtle">
+                      Exposing my Obsidian notes to a hosted Astro blog.
+                    </div>
+                  </div>
+                </div>
+                <div className="grid w-full grid-cols-6 justify-start rounded-md bg-rosePineDawn-overlay p-1 dark:bg-rosePineMoon-overlay">
+                  <div className="col-span-2 flex items-center justify-center rounded-md">
+                    <img
+                      className="h-[100%] w-[100%] object-cover p-2"
+                      src="/astro.svg"
+                      alt="astro"
+                    />
+                  </div>
+                  <div className="col-span-4 flex flex-col justify-center gap-y-1">
+                    <span className="text-sm font-medium text-rosePineDawn-text dark:text-rosePineMoon-text">
+                      Obsidian to Astro
+                    </span>
+                    <div className="text-justify text-sm text-rosePineDawn-muted dark:text-rosePineMoon-subtle">
+                      Exposing my Obsidian notes to a hosted Astro blog.
+                    </div>
+                  </div>
+                </div>
+                <div className=" w-full justify-center rounded-md bg-rosePineDawn-overlay p-1 dark:bg-rosePineMoon-overlay">
+                  <div className="flex flex-col items-center justify-center p-2">
+                    <span className="text-sm font-medium text-rosePineDawn-text dark:text-rosePineMoon-text">
+                      See More ...
+                    </span>
+                  </div>
                 </div>
               </div>
             </div>
@@ -52,13 +96,14 @@ const NavigationMenu = () => {
         <NavigationMenuPrimitive.Item>
           <NavigationMenuPrimitive.Trigger
             className={clsx(
-              'rounded-md px-3 py-2 text-sm hover:bg-rosePineDawn-overlay dark:hover:bg-rosePineMoon-overlay',
+              'flex items-center rounded-md px-3 py-2 text-sm hover:bg-rosePineDawn-overlay dark:hover:bg-rosePineMoon-overlay',
               'text-sm font-medium',
               'text-rosePineDawn-text dark:text-rosePineMoon-text',
               'focus:outline-none focus-visible:ring focus-visible:ring-opacity-75',
             )}
           >
-            Resources
+            <BackpackIcon className="h-8 w-8 object-cover pr-1" />
+            Career
           </NavigationMenuPrimitive.Trigger>
 
           <NavigationMenuPrimitive.Content
@@ -77,15 +122,16 @@ const NavigationMenu = () => {
                     'w-full rounded-md px-4 py-3 hover:bg-rosePineDawn-overlay dark:hover:bg-rosePineMoon-overlay',
                     'focus:outline-none focus-visible:ring focus-visible:ring-opacity-75',
                   )}
-                  href="https://tailwindcss.com"
+                  href="https://portfolio-guillaume-omega.vercel.app/"
                 >
-                  <span className="text-sm font-medium text-rosePineDawn-text dark:text-rosePineMoon-text">
-                    Tailwind CSS
+                  <span className="flex items-center gap-x-1 text-sm font-medium text-rosePineDawn-text dark:text-rosePineMoon-text">
+                    Work Experiences
+                    <ExternalLinkIcon />
                   </span>
 
                   <div className="mt-1 text-sm text-rosePineDawn-muted dark:text-rosePineMoon-subtle">
-                    A utility-first CSS framework for rapidly building custom
-                    user interfaces.
+                    Summary of all my past and current work experiences.
+                    Includes technical stack used for each project.
                   </div>
                 </NavigationMenuPrimitive.Link>
 
@@ -94,15 +140,15 @@ const NavigationMenu = () => {
                     'w-full rounded-md px-4 py-3 hover:bg-rosePineDawn-overlay dark:hover:bg-rosePineMoon-overlay',
                     'focus:outline-none focus-visible:ring focus-visible:ring-opacity-75',
                   )}
-                  href="https://www.radix-ui.com"
+                  href="https://portfolio-guillaume-omega.vercel.app/"
                 >
-                  <span className="text-sm font-medium text-rosePineDawn-text dark:text-rosePineMoon-text">
-                    Radix UI
+                  <span className="flex items-center gap-x-1 text-sm font-medium text-rosePineDawn-text dark:text-rosePineMoon-text">
+                    Education
+                    <ExternalLinkIcon />
                   </span>
 
                   <div className="mt-1 text-sm text-rosePineDawn-muted dark:text-rosePineMoon-subtle">
-                    An open-source UI component library for building
-                    high-quality, accessible design systems and web apps.
+                    Everything related to my education !
                   </div>
                 </NavigationMenuPrimitive.Link>
               </div>
@@ -112,14 +158,15 @@ const NavigationMenu = () => {
 
         <NavigationMenuPrimitive.Item asChild>
           <NavigationMenuPrimitive.Link
-            href="https://github.com/ecklf/tailwindcss-radix"
+            href="https://github.com/GoyoStach/"
             className={clsx(
-              'rounded-md px-3 py-2 text-sm hover:bg-rosePineDawn-overlay dark:hover:bg-rosePineMoon-overlay',
+              'flex items-center rounded-md px-3 py-2 text-sm hover:bg-rosePineDawn-overlay dark:hover:bg-rosePineMoon-overlay',
               'text-sm font-medium',
               'text-rosePineDawn-text dark:text-rosePineMoon-text',
               'focus:outline-none focus-visible:ring focus-visible:ring-opacity-75',
             )}
           >
+            <GitHubLogoIcon className="h-8 w-8 object-cover pr-1" />
             GitHub
           </NavigationMenuPrimitive.Link>
         </NavigationMenuPrimitive.Item>

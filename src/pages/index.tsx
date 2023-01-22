@@ -4,6 +4,7 @@ import MainLayout from '@/Layout/MainLayout'
 import { NavigationMenu } from '@/components/NavigationMenu'
 import { NextPage } from 'next'
 import clsx from 'clsx'
+import { useEffect } from 'react'
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -26,7 +27,7 @@ const Home: NextPage = () => {
         />
       </Head>
       <main>
-        <MainLayout>
+        <MainLayout className="flex justify-center">
           <h1>DefaultPage!</h1>
         </MainLayout>
       </main>
