@@ -83,20 +83,17 @@ const Home: NextPage = () => {
         <section
           className={clsx(
             'hidden lg:col-span-2 lg:flex',
-            'h-full w-full flex-grow-0 flex-col items-center justify-center p-10',
+            'h-full w-full flex-grow-0 flex-col items-center justify-center',
           )}
         >
-          <AspectRatio
-            ratio={4 / 3}
-            className=" overflow-hidden rounded-md"
-          >
+          <div className="relative h-2/3 w-1/2">
             <Image
               src="/obsidianToAstro.png"
               alt="obsidian to astro"
               fill
-              className="object-cover transition-all hover:scale-105"
+              className="object-contain transition-all hover:scale-105"
             />
-          </AspectRatio>
+          </div>
         </section>
       </main>
     </div>
