@@ -47,20 +47,20 @@ const Home: NextPage = () => {
       </Head>
       <main
         className={clsx(
-          'flex h-screen flex-col items-center justify-center bg-rosePineDawn-base dark:bg-rosePineMoon-base',
-          'lg:flex lg:flex-row lg:items-start lg:justify-start',
+          'flex h-screen w-screen flex-col items-center justify-center bg-rosePineDawn-base dark:bg-rosePineMoon-base',
+          'lg:grid lg:grid-cols-3 lg:items-start lg:justify-start',
         )}
       >
         <section
           className={clsx(
-            'prose prose-zinc flex h-full w-full flex-col bg-red-500 py-10 dark:prose-invert',
-            'lg:flex-1 lg:prose-xl ',
+            'prose prose-zinc flex flex-col items-center justify-center dark:prose-invert',
+            'lg:col-span-1 lg:h-full lg:w-full lg:items-start lg:justify-start lg:prose-xl',
           )}
         >
-          <h1 className=" text-rosePineDawn-text dark:text-rosePineMoon-text">
+          <h1 className="px-10 pt-10 text-rosePineDawn-text dark:text-rosePineMoon-text">
             Goyo Hub
           </h1>
-          <div className={clsx('hidden', 'lg:flex')}>
+          <div className={clsx('hidden', 'px-5 lg:flex lg:w-full')}>
             <Separator />
           </div>
         </section>
@@ -82,13 +82,13 @@ const Home: NextPage = () => {
         </section>
         <section
           className={clsx(
-            'hidden lg:flex lg:flex-1',
-            'prose prose-xl prose-zinc h-full w-full items-center justify-center dark:prose-invert lg:bg-yellow-500  ',
+            'hidden lg:col-span-2 lg:flex',
+            'h-full w-full flex-grow-0 flex-col items-center justify-center p-10',
           )}
         >
           <AspectRatio
-            ratio={3 / 4}
-            className="m-10 overflow-hidden rounded-md"
+            ratio={4 / 3}
+            className=" overflow-hidden rounded-md"
           >
             <Image
               src="/obsidianToAstro.png"
