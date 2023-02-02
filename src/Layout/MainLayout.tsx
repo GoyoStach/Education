@@ -10,12 +10,11 @@ type Props = {
 
 const MainLayout: FC<Props> = ({ children, className }) => {
   return (
-    <div>
+    <div className={clsx(className)}>
       <NavigationMenu />
       <main
         className={clsx(
           'prose prose-zinc mx-auto dark:prose-invert lg:prose-xl',
-          className,
         )}
       >
         {children}

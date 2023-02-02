@@ -1,16 +1,35 @@
+import { useEffect, useState } from 'react'
+
+import { AspectRatio } from '@/components/ui/aspect-ratio'
 import Head from 'next/head'
+import Image from 'next/image'
 import { Inter } from '@next/font/google'
 import MainLayout from '@/Layout/MainLayout'
 import { NavigationMenu } from '@/components/NavigationMenu'
 import { NextPage } from 'next'
+import { Separator } from '@/components/ui/separator'
 import clsx from 'clsx'
-import { useEffect } from 'react'
 
 const inter = Inter({ subsets: ['latin'] })
 
 const Home: NextPage = () => {
+  const [themeColor, setThemeColor] = useState('dark')
+  useEffect(() => {
+    // On page load or when changing themes, best to add inline in `head` to avoid FOUC
+
+    if (
+      localStorage.theme === 'dark' ||
+      (!('theme' in localStorage) &&
+        window.matchMedia('(prefers-color-scheme: dark)').matches)
+    ) {
+      setThemeColor('dark')
+    } else {
+      setThemeColor('')
+    }
+  }, [themeColor])
+
   return (
-    <>
+    <div className={clsx(themeColor)}>
       <Head>
         <title>Create Next App</title>
         <meta
@@ -26,12 +45,61 @@ const Home: NextPage = () => {
           href="/favicon.ico"
         />
       </Head>
-      <main>
-        <MainLayout className="flex justify-center">
-          <h1>DefaultPage!</h1>
-        </MainLayout>
+      <main
+        className={clsx(
+          'flex h-screen flex-col items-center justify-center bg-rosePineDawn-base dark:bg-rosePineMoon-base',
+          'lg:flex lg:flex-row lg:items-start lg:justify-start',
+        )}
+      >
+        <section
+          className={clsx(
+            'prose prose-zinc flex h-full w-full flex-col bg-red-500 py-10 dark:prose-invert',
+            'lg:flex-1 lg:prose-xl ',
+          )}
+        >
+          <h1 className=" text-rosePineDawn-text dark:text-rosePineMoon-text">
+            Goyo Hub
+          </h1>
+          <div className={clsx('hidden', 'lg:flex')}>
+            <Separator />
+          </div>
+        </section>
+        <section
+          className={clsx('visible flex flex-col gap-y-10', 'lg:hidden')}
+        >
+          <AspectRatio
+            ratio={3 / 4}
+            className="overflow-hidden rounded-md"
+          >
+            <Image
+              src="/obsidianToAstro.png"
+              alt="obsidian to astro"
+              fill
+              className="object-cover transition-all hover:scale-105"
+            />
+          </AspectRatio>
+          <NavigationMenu />
+        </section>
+        <section
+          className={clsx(
+            'hidden lg:flex lg:flex-1',
+            'prose prose-xl prose-zinc h-full w-full items-center justify-center dark:prose-invert lg:bg-yellow-500  ',
+          )}
+        >
+          <AspectRatio
+            ratio={3 / 4}
+            className="m-10 overflow-hidden rounded-md"
+          >
+            <Image
+              src="/obsidianToAstro.png"
+              alt="obsidian to astro"
+              fill
+              className="object-cover transition-all hover:scale-105"
+            />
+          </AspectRatio>
+        </section>
       </main>
-    </>
+    </div>
   )
 }
 
