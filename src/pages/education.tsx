@@ -62,7 +62,7 @@ const Home: NextPage = () => {
             'lg:col-span-1 lg:h-full lg:w-full lg:items-start lg:justify-start lg:prose-xl',
           )}
         >
-          <h1 className="px-10 pt-10 text-rosePineDawn-textos dark:text-rosePineMoon-textos">
+          <h1 className="px-10 pt-10 !text-rosePineDawn-textos dark:!text-rosePineMoon-textos">
             Goyo Hub
           </h1>
           <Breadcrumb aria-label="Default breadcrumb example">
@@ -80,10 +80,10 @@ const Home: NextPage = () => {
             <Timeline.Item>
               <Timeline.Point />
               <Timeline.Content>
-                <Timeline.Time className="text-rosePineDawn-subtle dark:text-rosePineMoon-subtle">
+                <Timeline.Time className="!text-rosePineDawn-subtle dark:!text-rosePineMoon-subtle">
                   February 2022
                 </Timeline.Time>
-                <Timeline.Title className="text-rosePineDawn-textos dark:text-rosePineMoon-textos">
+                <Timeline.Title className="!text-rosePineDawn-textos dark:!text-rosePineMoon-textos">
                   Application UI code in Tailwind CSS
                 </Timeline.Title>
                 <Timeline.Body>
@@ -96,10 +96,10 @@ const Home: NextPage = () => {
             <Timeline.Item>
               <Timeline.Point />
               <Timeline.Content>
-                <Timeline.Time className="text-rosePineDawn-subtle dark:text-rosePineMoon-subtle">
+                <Timeline.Time className="!text-rosePineDawn-subtle dark:!text-rosePineMoon-subtle">
                   February 2022
                 </Timeline.Time>
-                <Timeline.Title className="text-rosePineDawn-textos dark:text-rosePineMoon-textos">
+                <Timeline.Title className="!text-rosePineDawn-textos dark:!text-rosePineMoon-textos">
                   Application UI code in Tailwind CSS
                 </Timeline.Title>
                 <Timeline.Body>
@@ -112,10 +112,10 @@ const Home: NextPage = () => {
             <Timeline.Item>
               <Timeline.Point />
               <Timeline.Content>
-                <Timeline.Time className="text-rosePineDawn-subtle dark:text-rosePineMoon-subtle">
+                <Timeline.Time className="!text-rosePineDawn-subtle dark:!text-rosePineMoon-subtle">
                   February 2022
                 </Timeline.Time>
-                <Timeline.Title className="text-rosePineDawn-textos dark:text-rosePineMoon-textos">
+                <Timeline.Title className="!text-rosePineDawn-textos dark:!text-rosePineMoon-textos">
                   Application UI code in Tailwind CSS
                 </Timeline.Title>
                 <Timeline.Body>
@@ -128,10 +128,10 @@ const Home: NextPage = () => {
             <Timeline.Item>
               <Timeline.Point />
               <Timeline.Content>
-                <Timeline.Time className="text-rosePineDawn-subtle dark:text-rosePineMoon-subtle">
+                <Timeline.Time className="!text-rosePineDawn-subtle dark:!text-rosePineMoon-subtle">
                   March 2022
                 </Timeline.Time>
-                <Timeline.Title className="text-rosePineDawn-textos dark:text-rosePineMoon-textos">
+                <Timeline.Title className="!text-rosePineDawn-textos dark:!text-rosePineMoon-textos">
                   Marketing UI design in Figma
                 </Timeline.Title>
                 <Timeline.Body>
@@ -144,10 +144,10 @@ const Home: NextPage = () => {
             <Timeline.Item>
               <Timeline.Point />
               <Timeline.Content>
-                <Timeline.Time className="text-rosePineDawn-subtle dark:text-rosePineMoon-subtle">
+                <Timeline.Time className="!text-rosePineDawn-subtle dark:!text-rosePineMoon-subtle">
                   April 2022
                 </Timeline.Time>
-                <Timeline.Title className="text-rosePineDawn-textos dark:text-rosePineMoon-textos">
+                <Timeline.Title className="!text-rosePineDawn-textos dark:!text-rosePineMoon-textos">
                   E-Commerce UI code in Tailwind CSS
                 </Timeline.Title>
                 <Timeline.Body>
