@@ -1,3 +1,7 @@
+'use-client'
+
+import { Button, Carousel, Sidebar, Timeline } from 'flowbite-react'
+import { CaretLeftIcon, CaretRightIcon } from '@radix-ui/react-icons'
 import { useEffect, useState } from 'react'
 
 import { AspectRatio } from '@/components/ui/aspect-ratio'
@@ -47,7 +51,7 @@ const Home: NextPage = () => {
       </Head>
       <main
         className={clsx(
-          'flex h-screen w-screen flex-col items-center justify-center bg-rosePineDawn-base dark:bg-rosePineMoon-base',
+          'flex min-h-screen flex-col items-center justify-center bg-rosePineDawn-base dark:bg-rosePineMoon-base',
           'lg:grid lg:grid-cols-3 lg:items-start lg:justify-start',
         )}
       >
@@ -57,42 +61,51 @@ const Home: NextPage = () => {
             'lg:col-span-1 lg:h-full lg:w-full lg:items-start lg:justify-start lg:prose-xl',
           )}
         >
-          <h1 className="px-10 pt-10 text-rosePineDawn-text dark:text-rosePineMoon-text">
+          <h1 className="px-10 pt-10 text-rosePineDawn-textos dark:text-rosePineMoon-textos">
             Goyo Hub
           </h1>
           <div className={clsx('hidden', 'px-5 lg:flex lg:w-full')}>
             <Separator />
           </div>
+          <div className="h-full w-full bg-red-500"></div>
         </section>
-        <section
-          className={clsx('visible flex flex-col gap-y-10', 'lg:hidden')}
-        >
-          <AspectRatio
-            ratio={3 / 4}
-            className="overflow-hidden rounded-md"
-          >
-            <Image
-              src="/obsidianToAstro.png"
-              alt="obsidian to astro"
-              fill
-              className="object-cover transition-all hover:scale-105"
-            />
-          </AspectRatio>
-          <NavigationMenu />
-        </section>
+
         <section
           className={clsx(
-            'hidden lg:col-span-2 lg:flex',
-            'h-full w-full flex-grow-0 flex-col items-center justify-center',
+            'flex lg:col-span-2',
+            'h-[500px] w-full flex-col  items-center justify-center lg:h-full',
           )}
         >
-          <div className="relative h-2/3 w-1/2">
-            <Image
-              src="/obsidianToAstro.png"
-              alt="obsidian to astro"
-              fill
-              className="object-contain transition-all hover:scale-105"
-            />
+          <div className="relative h-[90%] w-[95%]  xl:h-2/3 xl:w-2/3">
+            <Carousel
+              slideInterval={5000}
+              leftControl={
+                <div className="rounded-full bg-rosePineDawn-surface dark:bg-rosePineMoon-surface hover:dark:bg-rosePineMoon-overlay">
+                  <CaretLeftIcon className="h-10 w-10 text-rosePineDawn-text dark:text-rosePineMoon-text" />
+                </div>
+              }
+              rightControl={
+                <div className="rounded-full bg-rosePineDawn-surface dark:bg-rosePineMoon-surface hover:dark:bg-rosePineMoon-overlay">
+                  <CaretRightIcon className="h-10 w-10 text-rosePineDawn-text dark:text-rosePineMoon-text" />
+                </div>
+              }
+            >
+              <img
+                src="/obsidianToAstro.png"
+                alt="..."
+                className="object-cover px-16 transition-all hover:scale-105"
+              />
+              <img
+                src="/obsidianToAstro.png"
+                alt="..."
+                className="object-cover px-16 transition-all hover:scale-105"
+              />
+              <img
+                src="/obsidianToAstro.png"
+                alt="..."
+                className="object-cover px-16 transition-all hover:scale-105"
+              />
+            </Carousel>
           </div>
         </section>
       </main>
