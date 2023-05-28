@@ -1,23 +1,29 @@
-'use-client'
+'use-client';
 
-import { Breadcrumb, Button, Carousel, Sidebar, Timeline } from 'flowbite-react'
+import {
+  Breadcrumb,
+  Button,
+  Carousel,
+  Sidebar,
+  Timeline,
+} from 'flowbite-react';
 import {
   CaretLeftIcon,
   CaretRightIcon,
   ChevronLeftIcon,
-} from '@radix-ui/react-icons'
-import { FunctionComponent, SVGProps, useEffect, useState } from 'react'
-import { RxClipboard, RxSpeakerOff } from 'react-icons/rx'
+} from '@radix-ui/react-icons';
+import { FunctionComponent, SVGProps, useEffect, useState } from 'react';
+import { RxClipboard, RxSpeakerOff } from 'react-icons/rx';
 
-import { EducationEvent } from 'types/types'
-import Head from 'next/head'
-import { Inter } from '@next/font/google'
-import Link from 'next/link'
-import { NextPage } from 'next'
-import { Separator } from '@/components/ui/separator'
-import clsx from 'clsx'
+import { EducationEvent } from 'types/types';
+import Head from 'next/head';
+import { Inter } from '@next/font/google';
+import Link from 'next/link';
+import { NextPage } from 'next';
+import { Separator } from '@/components/ui/separator';
+import clsx from 'clsx';
 
-const inter = Inter({ subsets: ['latin'] })
+const inter = Inter({ subsets: ['latin'] });
 
 const data: EducationEvent[] = [
   {
@@ -76,10 +82,10 @@ const data: EducationEvent[] = [
     content:
       'My high school was located in Vienne, Isère, France. \n Lasted for 3 years in which at the end I obtained the french baccalaureat with honors.',
   },
-]
+];
 
 const Home: NextPage = () => {
-  const [themeColor, setThemeColor] = useState('dark')
+  const [themeColor, setThemeColor] = useState('dark');
   useEffect(() => {
     // On page load or when changing themes, best to add inline in `head` to avoid FOUC
 
@@ -88,11 +94,11 @@ const Home: NextPage = () => {
       (!('theme' in localStorage) &&
         window.matchMedia('(prefers-color-scheme: dark)').matches)
     ) {
-      setThemeColor('dark')
+      setThemeColor('dark');
     } else {
-      setThemeColor('')
+      setThemeColor('');
     }
-  }, [themeColor])
+  }, [themeColor]);
 
   return (
     <div className={clsx(themeColor)}>
@@ -150,7 +156,7 @@ const Home: NextPage = () => {
           <Timeline className="m-10 flex flex-col items-center">
             {data.map(event => {
               return (
-                <Timeline.Item>
+                <Timeline.Item key={event.id}>
                   <Timeline.Point className="[&>*]:!bg-rosePineDawn-subtle dark:[&>*]:!bg-rosePineMoon-subtle " />
                   <Timeline.Content>
                     <Timeline.Time className="!text-rosePineDawn-subtle dark:!text-rosePineMoon-subtle">
@@ -159,6 +165,7 @@ const Home: NextPage = () => {
                     <img
                       src={event.img}
                       className="h-24 bg-white p-2"
+                      alt={`${event.title}-experience-image`}
                     />
                     <Timeline.Title className="!text-rosePineDawn-text dark:!text-rosePineMoon-text">
                       {event.title}
@@ -168,7 +175,7 @@ const Home: NextPage = () => {
                     </Timeline.Body>
                   </Timeline.Content>
                 </Timeline.Item>
-              )
+              );
             })}
           </Timeline>
           <div>
@@ -178,7 +185,7 @@ const Home: NextPage = () => {
         </section>
       </main>
     </div>
-  )
-}
+  );
+};
 
-export default Home
+export default Home;

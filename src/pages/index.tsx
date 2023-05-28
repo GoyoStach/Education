@@ -1,23 +1,23 @@
-'use-client'
+'use-client';
 
-import { Button, Carousel, Sidebar, Timeline } from 'flowbite-react'
-import { CaretLeftIcon, CaretRightIcon } from '@radix-ui/react-icons'
-import { useEffect, useState } from 'react'
+import { Button, Carousel, Sidebar, Timeline } from 'flowbite-react';
+import { CaretLeftIcon, CaretRightIcon } from '@radix-ui/react-icons';
+import { useEffect, useState } from 'react';
 
-import { AspectRatio } from '@/components/ui/aspect-ratio'
-import Head from 'next/head'
-import Image from 'next/image'
-import { Inter } from '@next/font/google'
-import MainLayout from '@/Layout/MainLayout'
-import { NavigationMenu } from '@/components/NavigationMenu'
-import { NextPage } from 'next'
-import { Separator } from '@/components/ui/separator'
-import clsx from 'clsx'
+import { AspectRatio } from '@/components/ui/aspect-ratio';
+import Head from 'next/head';
+import Image from 'next/image';
+import { Inter } from '@next/font/google';
+import MainLayout from '@/Layout/MainLayout';
+import { NavigationMenu } from '@/components/NavigationMenu';
+import { NextPage } from 'next';
+import { Separator } from '@/components/ui/separator';
+import clsx from 'clsx';
 
-const inter = Inter({ subsets: ['latin'] })
+const inter = Inter({ subsets: ['latin'] });
 
 const Home: NextPage = () => {
-  const [themeColor, setThemeColor] = useState('dark')
+  const [themeColor, setThemeColor] = useState('dark');
   useEffect(() => {
     // On page load or when changing themes, best to add inline in `head` to avoid FOUC
 
@@ -26,11 +26,11 @@ const Home: NextPage = () => {
       (!('theme' in localStorage) &&
         window.matchMedia('(prefers-color-scheme: dark)').matches)
     ) {
-      setThemeColor('dark')
+      setThemeColor('dark');
     } else {
-      setThemeColor('')
+      setThemeColor('');
     }
-  }, [themeColor])
+  }, [themeColor]);
 
   return (
     <div className={clsx(themeColor)}>
@@ -110,7 +110,7 @@ const Home: NextPage = () => {
         </section>
       </main>
     </div>
-  )
-}
+  );
+};
 
-export default Home
+export default Home;

@@ -1,4 +1,4 @@
-import * as NavigationMenuPrimitive from '@radix-ui/react-navigation-menu'
+import * as NavigationMenuPrimitive from '@radix-ui/react-navigation-menu';
 
 import {
   BackpackIcon,
@@ -8,10 +8,10 @@ import {
   LaptopIcon,
   PlusCircledIcon,
   PlusIcon,
-} from '@radix-ui/react-icons'
+} from '@radix-ui/react-icons';
 
-import React from 'react'
-import { clsx } from 'clsx'
+import React from 'react';
+import { clsx } from 'clsx';
 
 const NavigationMenu = () => {
   return (
@@ -202,7 +202,7 @@ const NavigationMenu = () => {
         />
       </div>
     </NavigationMenuPrimitive.Root>
-  )
-}
+  );
+};
 
-export { NavigationMenu }
+export { NavigationMenu };
