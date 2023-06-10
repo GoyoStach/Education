@@ -1,20 +1,34 @@
 'use-client';
 
-import { Button, Carousel, Sidebar, Timeline } from 'flowbite-react';
-import { CaretLeftIcon, CaretRightIcon } from '@radix-ui/react-icons';
-import { useEffect, useState } from 'react';
+import {
+  Breadcrumb,
+  Button,
+  Carousel,
+  Sidebar,
+  Timeline,
+} from 'flowbite-react';
+import {
+  CaretLeftIcon,
+  CaretRightIcon,
+  ChevronLeftIcon,
+} from '@radix-ui/react-icons';
+import { FunctionComponent, SVGProps, useEffect, useState } from 'react';
+import { RxClipboard, RxSpeakerOff } from 'react-icons/rx';
 
-import { AspectRatio } from '@/components/ui/aspect-ratio';
+import { EducationEvent } from 'types/types';
 import Head from 'next/head';
-import Image from 'next/image';
 import { Inter } from '@next/font/google';
-import MainLayout from '@/Layout/MainLayout';
-import { NavigationMenu } from '@/components/NavigationMenu';
+import Link from 'next/link';
 import { NextPage } from 'next';
 import { Separator } from '@/components/ui/separator';
 import clsx from 'clsx';
+import education from 'data/education';
+import MainLayout from '@/Layout/MainLayout';
+import { NavigationMenu } from '@/components/NavigationMenu';
 
 const inter = Inter({ subsets: ['latin'] });
+
+const data: EducationEvent[] = education;
 
 const Home: NextPage = () => {
   const [themeColor, setThemeColor] = useState('dark');
@@ -49,66 +63,54 @@ const Home: NextPage = () => {
           href="/favicon.ico"
         />
       </Head>
-      <main
+      <div
         className={clsx(
           'flex min-h-screen flex-col items-center justify-center bg-rosePineDawn-base dark:bg-rosePineMoon-base',
-          'lg:grid lg:grid-cols-3 lg:items-start lg:justify-start',
         )}
       >
+        <NavigationMenu />
         <section
           className={clsx(
-            'prose prose-zinc flex flex-col items-center justify-center dark:prose-invert',
-            'lg:col-span-1 lg:h-full lg:w-full lg:items-start lg:justify-start lg:prose-xl',
+            'prose prose-zinc flex flex-col  dark:prose-invert',
+            'lg:col-span-1 lg:h-full lg:w-full lg:prose-xl',
           )}
         >
-          <h1 className="px-10 pt-10 text-rosePineDawn-textos dark:text-rosePineMoon-textos">
-            Goyo Hub
+          <h1 className="flex items-center justify-center pt-5 !text-rosePineDawn-text dark:!text-rosePineMoon-text">
+            Goyo Education
           </h1>
-          <div className={clsx('hidden', 'px-5 lg:flex lg:w-full')}>
-            <Separator />
-          </div>
-          <div className="h-full w-full bg-red-500"></div>
-        </section>
 
-        <section
-          className={clsx(
-            'flex lg:col-span-2',
-            'h-[500px] w-full flex-col  items-center justify-center lg:h-full',
-          )}
-        >
-          <div className="relative h-[90%] w-[95%]  xl:h-2/3 xl:w-2/3">
-            <Carousel
-              slideInterval={5000}
-              leftControl={
-                <div className="rounded-full bg-rosePineDawn-surface dark:bg-rosePineMoon-surface hover:dark:bg-rosePineMoon-overlay">
-                  <CaretLeftIcon className="h-10 w-10 text-rosePineDawn-text dark:text-rosePineMoon-text" />
-                </div>
-              }
-              rightControl={
-                <div className="rounded-full bg-rosePineDawn-surface dark:bg-rosePineMoon-surface hover:dark:bg-rosePineMoon-overlay">
-                  <CaretRightIcon className="h-10 w-10 text-rosePineDawn-text dark:text-rosePineMoon-text" />
-                </div>
-              }
-            >
-              <img
-                src="/obsidianToAstro.png"
-                alt="..."
-                className="object-cover px-16 transition-all hover:scale-105"
-              />
-              <img
-                src="/obsidianToAstro.png"
-                alt="..."
-                className="object-cover px-16 transition-all hover:scale-105"
-              />
-              <img
-                src="/obsidianToAstro.png"
-                alt="..."
-                className="object-cover px-16 transition-all hover:scale-105"
-              />
-            </Carousel>
+          <Separator />
+          <Timeline className="m-10 flex flex-col items-center">
+            {data.map(event => {
+              return (
+                <Timeline.Item key={event.id}>
+                  <Timeline.Point className="[&>*]:!bg-rosePineDawn-subtle dark:[&>*]:!bg-rosePineMoon-subtle " />
+                  <Timeline.Content>
+                    <Timeline.Time className="!text-rosePineDawn-subtle dark:!text-rosePineMoon-subtle">
+                      {event.time}
+                    </Timeline.Time>
+                    <img
+                      src={event.img}
+                      className="h-24 bg-white p-2"
+                      alt={`${event.title}-experience-image`}
+                    />
+                    <Timeline.Title className="!text-rosePineDawn-text dark:!text-rosePineMoon-text">
+                      {event.title}
+                    </Timeline.Title>
+                    <Timeline.Body className="whitespace-pre-line !text-rosePineDawn-foam dark:!text-rosePineMoon-foam">
+                      {event.content}
+                    </Timeline.Body>
+                  </Timeline.Content>
+                </Timeline.Item>
+              );
+            })}
+          </Timeline>
+          <div>
+            <Separator />
+            Footer to be declared here
           </div>
         </section>
-      </main>
+      </div>
     </div>
   );
 };

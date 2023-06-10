@@ -15,7 +15,7 @@ import { clsx } from 'clsx';
 
 const NavigationMenu = () => {
   return (
-    <NavigationMenuPrimitive.Root className="relative flex justify-center">
+    <NavigationMenuPrimitive.Root className="relative z-10 flex justify-center">
       <NavigationMenuPrimitive.List
         className={clsx(
           ' flex flex-row space-x-2 rounded-lg p-2',
@@ -47,7 +47,31 @@ const NavigationMenu = () => {
           >
             <div className="w-[21rem] bg-rosePineDawn-surface p-3 dark:bg-rosePineMoon-surface lg:w-[23rem]">
               <div className="flex w-full flex-col space-y-3 rounded-md bg-rosePineDawn-base p-4 dark:bg-rosePineMoon-base">
-                <div className="grid w-full grid-cols-6 justify-start rounded-md bg-rosePineDawn-overlay p-1 dark:bg-rosePineMoon-overlay">
+                <a
+                  href="https://portfolio-vanilla-gilt.vercel.app/"
+                  className="grid w-full grid-cols-6 justify-start rounded-md bg-rosePineDawn-overlay p-1 dark:bg-rosePineMoon-overlay"
+                >
+                  <div className="col-span-2 flex items-center justify-center rounded-md">
+                    <img
+                      className="h-[100%] w-[100%] rounded-xl object-cover p-2 bg-blend-lighten"
+                      src="/goyo.png"
+                      alt="goyo"
+                    />
+                  </div>
+                  <div className="col-span-4 flex flex-col justify-center gap-y-1">
+                    <span className="text-sm font-medium text-rosePineDawn-text dark:text-rosePineMoon-text">
+                      Portfolio
+                    </span>
+                    <div className="text-justify text-sm text-rosePineDawn-muted dark:text-rosePineMoon-subtle">
+                      General infos about me. My work experiences and technical
+                      stack
+                    </div>
+                  </div>
+                </a>
+                <a
+                  href="https://obsidian-to-astro.vercel.app/"
+                  className="grid w-full grid-cols-6 justify-start rounded-md bg-rosePineDawn-overlay p-1 dark:bg-rosePineMoon-overlay"
+                >
                   <div className="col-span-2 flex items-center justify-center rounded-md">
                     <img
                       className="h-[100%] w-[100%] object-cover p-2"
@@ -60,31 +84,15 @@ const NavigationMenu = () => {
                       Obsidian to Astro
                     </span>
                     <div className="text-justify text-sm text-rosePineDawn-muted dark:text-rosePineMoon-subtle">
-                      Exposing my Obsidian notes to a hosted Astro blog.
+                      My exposed note taking blog. Mostly related to programming
+                      subjects
                     </div>
                   </div>
-                </div>
-                <div className="grid w-full grid-cols-6 justify-start rounded-md bg-rosePineDawn-overlay p-1 dark:bg-rosePineMoon-overlay">
-                  <div className="col-span-2 flex items-center justify-center rounded-md">
-                    <img
-                      className="h-[100%] w-[100%] object-cover p-2"
-                      src="/astro.svg"
-                      alt="astro"
-                    />
-                  </div>
-                  <div className="col-span-4 flex flex-col justify-center gap-y-1">
-                    <span className="text-sm font-medium text-rosePineDawn-text dark:text-rosePineMoon-text">
-                      Obsidian to Astro
-                    </span>
-                    <div className="text-justify text-sm text-rosePineDawn-muted dark:text-rosePineMoon-subtle">
-                      Exposing my Obsidian notes to a hosted Astro blog.
-                    </div>
-                  </div>
-                </div>
+                </a>
                 <div className=" w-full justify-center rounded-md bg-rosePineDawn-overlay p-1 dark:bg-rosePineMoon-overlay">
                   <div className="flex flex-col items-center justify-center p-2">
                     <span className="text-sm font-medium text-rosePineDawn-text dark:text-rosePineMoon-text">
-                      See More ...
+                      [WIP] See More ... On my projects Hub !
                     </span>
                   </div>
                 </div>
@@ -125,7 +133,7 @@ const NavigationMenu = () => {
                   href="https://portfolio-guillaume-omega.vercel.app/"
                 >
                   <span className="flex items-center gap-x-1 text-sm font-medium text-rosePineDawn-text dark:text-rosePineMoon-text">
-                    Work Experiences
+                    [WIP] Work Experiences
                     <ExternalLinkIcon />
                   </span>
 
