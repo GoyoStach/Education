@@ -1,30 +1,17 @@
 'use-client';
 
-import {
-  Breadcrumb,
-  Button,
-  Carousel,
-  Sidebar,
-  Timeline,
-} from 'flowbite-react';
-import {
-  CaretLeftIcon,
-  CaretRightIcon,
-  ChevronLeftIcon,
-} from '@radix-ui/react-icons';
-import { FunctionComponent, SVGProps, useEffect, useState } from 'react';
-import { RxClipboard, RxSpeakerOff } from 'react-icons/rx';
+import { Timeline } from 'flowbite-react';
 
 import { EducationEvent } from 'types/types';
 import Head from 'next/head';
 import { Inter } from '@next/font/google';
-import Link from 'next/link';
+
 import { NextPage } from 'next';
 import { Separator } from '@/components/ui/separator';
 import clsx from 'clsx';
 import education from 'data/education';
-import MainLayout from '@/Layout/MainLayout';
 import { NavigationMenu } from '@/components/NavigationMenu';
+import { useState, useEffect } from 'react';
 
 const inter = Inter({ subsets: ['latin'] });
 
